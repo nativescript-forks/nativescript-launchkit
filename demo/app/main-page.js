@@ -30,7 +30,7 @@ exports.onAppReviewTap = function (args) {
     });
 }
 
-//ALL GOOD
+//DONE
 exports.onReleaseNotesTap = function (args) {
     launchkit.showReleaseNotes({
         page: page,
@@ -42,3 +42,7 @@ exports.onReleaseNotesTap = function (args) {
     });
 }
 
+//DONE
+exports.onIsSuperUserTap = function (args) {
+    viewModel.status = launchkit.isSuperUser({ debug: viewModel.isSuperUserDebug});
+}

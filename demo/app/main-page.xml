@@ -1,10 +1,19 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
   <StackLayout>
+    <Label text="LaunchKit" textWrap="true" class="fancyblack" />
+    
     <Label text="Open Onboarding screen" class="title" tap="onOnboardingTap" />
     <Label text="Open App Review Card" class="title" tap="onAppReviewTap" />
     <Label text="Release Notes" class="title" tap="onReleaseNotesTap" />
     
-    <Label text="{{ status }}" textWrap="true" style="margin-top: 40" />
+    <StackLayout orientation="horizontal">
+      <Label text="Is Super User" class="title" tap="onIsSuperUserTap" />
+      <Switch checked="{{ isSuperUserDebug }}" />
+    </StackLayout>
     
+    
+    <Image src="https://d2kfjaekmjmy1l.cloudfront.net/images/icon-vrIMokVF5IKiFaCjR3AhYczmx.png" stretch ="fill" class="logo" />
+        <Label text="{{ status }}" textWrap="true" class="status" />
+        
   </StackLayout>
 </Page>

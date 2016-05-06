@@ -1,1 +1,17 @@
-﻿
+﻿.logo{
+    height: 60;
+    width: 60;
+    margin: 40 0;
+}
+
+.status{
+    
+}
+
+.fancyblack{
+    color: #343f4b;
+}
+
+.fancyblue{
+    color: #0092F2;
+}
