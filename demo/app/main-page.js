@@ -24,3 +24,12 @@ exports.onAppReviewTap = function (args) {
        debugger; 
     });
 }
+
+exports.onReleaseNotesTap = function (args) {
+    launchkit.showReleaseNotes({
+        page: page,
+        debug: true
+    }).then(function (args) {
+       debugger; 
+    });
+}

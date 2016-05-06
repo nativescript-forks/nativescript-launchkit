@@ -2,5 +2,6 @@
   <StackLayout>
     <Label text="Open Onboarding screen" class="title" tap="onOnboardingTap" />
     <Label text="Open App Review Card" class="title" tap="onAppReviewTap" />
+    <Label text="Release Notes" class="title" tap="onReleaseNotesTap" />
   </StackLayout>
 </Page>

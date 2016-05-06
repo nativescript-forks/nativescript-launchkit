@@ -25,7 +25,12 @@ exports.instance = function () {
     return LaunchKit.sharedInstance();
 }
 
-exports.isSuperUser = function () {
+exports.isSuperUser = function (options) {
+    if(options){
+        if(options.debug)
+            LaunchKit.sharedInstance().debugAppUserIsAlwaysSuper = options.debug;
+    }
+        
     return LKAppUserIsSuper();
 }
 
@@ -63,7 +68,8 @@ exports.showAppReviewCard = function (options) {
         if(instance){
             if(options){
                 if(options.debug){
-                    instance.debugAlwaysPresentAppReleaseNotes = options.debug;
+                    //This is documented but not live yet?
+                    instance.debugAlwaysShowAppRatingPrompt = options.debug;
                 }
             }
             
@@ -84,3 +90,30 @@ exports.showAppReviewCard = function (options) {
     });
 }
 
+
+exports.showReleaseNotes = function (options) {
+    return new Promise(function(resolve, reject) {
+        var instance = LaunchKit.sharedInstance();
+        
+        if(instance){
+            if(options){
+                if(options.debug){
+                    instance.debugAlwaysPresentAppReleaseNotes = options.debug;
+                }
+            }
+            
+            var controller = options.page.ios;
+            instance.presentAppReleaseNotesIfNeededFromViewController(controller, function (didPresent) {
+                //Completion
+                resolve(
+                    {
+                        didPresent: didPresent
+                    }
+                )
+            })
+        }else{
+            console.log("Please call initalize first");
+            reject("Please call initalize first");
+        }
+    });
+}
