@@ -103,7 +103,7 @@ exports.showReleaseNotes = function (options) {
             }
             
             var controller = options.page.ios;
-            instance.presentAppReleaseNotesIfNeededFromViewController(controller, function (didPresent) {
+            instance.presentAppReleaseNotesIfNeededFromViewControllerCompletion(controller, function (didPresent) {
                 //Completion
                 resolve(
                     {

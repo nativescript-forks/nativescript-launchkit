@@ -9,27 +9,36 @@ exports.onNavigatingTo = function (args) {
     page.bindingContext = createViewModel();
 }
 
-
-exports.onTap = function (args) {
+//TODO: Partially Working
+exports.onOnboardingTap = function (args) {
     launchkit.showOnboarding().then(function (args) {
-       debugger; 
+       viewModel.status = JSON.stringify(args);
+    }, function (error) {
+        viewModel.status = JSON.stringify(error);
     });
 }
 
+//TODO: Not working
 exports.onAppReviewTap = function (args) {
     launchkit.showAppReviewCard({
         page: page,
         debug: true
     }).then(function (args) {
-       debugger; 
+       viewModel.status = JSON.stringify(args); 
+    }, function (error) {
+        viewModel.status = JSON.stringify(error);
     });
 }
 
+//ALL GOOD
 exports.onReleaseNotesTap = function (args) {
     launchkit.showReleaseNotes({
         page: page,
         debug: true
     }).then(function (args) {
-       debugger; 
+       viewModel.status = JSON.stringify(args);
+    }, function (error) {
+        viewModel.status = JSON.stringify(error);
     });
 }
+
