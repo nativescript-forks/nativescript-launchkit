@@ -1,8 +1,12 @@
 {
 	"nativescript": {
-		"id": "org.nativescript.demo"
+		"id": "org.nativescript.launchkitdemo",
+		"tns-ios": {
+			"version": "1.7.0"
+		}
 	},
 	"dependencies": {
+		"nativescript-launchkit": "file:../plugin",
 		"tns-core-modules": "2.0.0"
 	}
 }

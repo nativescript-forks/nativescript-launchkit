@@ -1,7 +1,12 @@
 var createViewModel = require("./main-view-model").createViewModel;
 
-function onNavigatingTo(args) {
+
+exports.onNavigatingTo = function (args) {
     var page = args.object;
     page.bindingContext = createViewModel();
 }
-exports.onNavigatingTo = onNavigatingTo;
+
+
+exports.onTap = function (args) {
+    
+}

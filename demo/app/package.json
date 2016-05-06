@@ -1,25 +1,27 @@
 {
-	"name": "tns-template-hello-world",
+	"name": "LaunchkitSDKDemo",
 	"main": "app.js",
-	"version": "2.0.0",
-	"author": "Telerik <support@telerik.com>",
-	"description": "Nativescript hello-world project template",
+	"version": "0.1.0",
+	"author": {
+		"name": "Steve McNiven-Scott",
+		"email": "steve@sitefinitysteve.com",
+		"url": "https://github.com/sitefinitysteve"
+	},
+	"description": "Integrate native launchkit iOS widgets into NativeScript",
 	"license": "Apache-2.0",
 	"keywords": [
-		"telerik",
-		"mobile",
-		"nativescript",
-		"{N}",
-		"tns",
-		"appbuilder",
-		"template"
+		"NativeScript",
+		"LaunchKit",
+		"LaunchKitSDK",
+		"sitefinitysteve",
+		"iOS"
 	],
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/NativeScript/template-hello-world.git"
+		"url": "https://github.com/sitefinitysteve/nativescript-launchkit.git"
 	},
 	"bugs": {
-		"url": "https://github.com/NativeScript/template-hello-world/issues"
+		"url": "https://github.com/sitefinitysteve/nativescript-launchkit/issues"
 	},
 	"homepage": "https://github.com/NativeScript/template-hello-world",
 	"android": {
