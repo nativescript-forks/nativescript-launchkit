@@ -17,11 +17,9 @@ if (application.ios) {
         }
         
         appDelegate.prototype.applicationDidFinishLaunchingWithOptions = function (application, launchOptions) {
-            debugger;
             LaunchKit.launchWithToken("OjMwhQZ5WgFFNZAQVBOYtWtAcXv1Kw2inxkzPEx_j6sK");
             
-            var window = null;
-            var instance = LaunchKit.alloc().init(); 
+            var instance = LaunchKit.sharedInstance();
             instance.presentOnboardingUIOnWindowCompletionHandler(window, function(args){
                 debugger;
             })
