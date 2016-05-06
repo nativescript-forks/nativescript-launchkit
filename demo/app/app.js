@@ -17,7 +17,9 @@ if (application.ios) {
         }
         
         appDelegate.prototype.applicationDidFinishLaunchingWithOptions = function (app, launchOptions) {
-            launchkit.initalize("OjMwhQZ5WgFFNZAQVBOYtWtAcXv1Kw2inxkzPEx_j6sK");
+            launchkit.initalize({
+                token: "OjMwhQZ5WgFFNZAQVBOYtWtAcXv1Kw2inxkzPEx_j6sK"
+            });
         };
         
         appDelegate.ObjCProtocols = [UIApplicationDelegate];
@@ -25,5 +27,6 @@ if (application.ios) {
     })(UIResponder);
     application.ios.delegate = appDelegate;
 }
+
 
 application.start({ moduleName: "main-page" });

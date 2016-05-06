@@ -1,5 +1,6 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
   <StackLayout>
-    <Label text="Tap" class="title" tap="onTap" />
+    <Label text="Open Onboarding screen" class="title" tap="onOnboardingTap" />
+    <Label text="Open App Review Card" class="title" tap="onAppReviewTap" />
   </StackLayout>
 </Page>
