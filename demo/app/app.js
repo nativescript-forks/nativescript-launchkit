@@ -16,13 +16,8 @@ if (application.ios) {
             _super.apply(this, arguments);
         }
         
-        appDelegate.prototype.applicationDidFinishLaunchingWithOptions = function (application, launchOptions) {
-            LaunchKit.launchWithToken("OjMwhQZ5WgFFNZAQVBOYtWtAcXv1Kw2inxkzPEx_j6sK");
-            
-            var instance = LaunchKit.sharedInstance();
-            instance.presentOnboardingUIOnWindowCompletionHandler(window, function(args){
-                debugger;
-            })
+        appDelegate.prototype.applicationDidFinishLaunchingWithOptions = function (app, launchOptions) {
+            launchkit.initalize("OjMwhQZ5WgFFNZAQVBOYtWtAcXv1Kw2inxkzPEx_j6sK");
         };
         
         appDelegate.ObjCProtocols = [UIApplicationDelegate];
