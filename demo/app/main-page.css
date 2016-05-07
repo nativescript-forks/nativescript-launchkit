@@ -1,0 +1,76 @@
+Page{
+    font-family: "Raleway";
+    background-color: #F5F7F8;
+}
+
+.logo{
+    height: 60;
+    width: 60;
+    margin: 40 0;
+}
+
+.lklogo{
+    margin: 20 0;
+    text-align: center;
+    horizontal-align: center;
+    font-size: 30;
+}
+
+.card{
+    background-color: #FFF;
+    margin-left: 40;
+    margin-right: 40;
+    margin-bottom: 10;
+    padding: 20;
+    text-align: center;
+    border-width: 1;
+    border-color: #DADCDE;
+    border-radius: 10;
+}
+
+.img{
+    horizontal-align: center;
+    width: 60;
+    height: 60;
+}
+
+.title{
+    font-family: "Raleway";
+    font-size: 25;
+    margin-top: 10;
+}
+
+.desc{
+    font-family: "Raleway";
+    font-size: 18;
+}
+
+.button{
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    margin-top: 10;
+    horizontal-align: center;
+    padding: 5 10;
+    font-size: 15;
+    border-radius: 5;
+}
+
+.status{
+    
+}
+
+
+
+.fancyblack{
+    color: #343f4b;
+}
+
+.fancyblue{
+    color: #0092F2;
+}
+
+.fancygrey{
+    color: #91969B;
+}

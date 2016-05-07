@@ -1,19 +1,25 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
-  <StackLayout>
-    <Label text="LaunchKit" textWrap="true" class="fancyblack" />
-    
-    <Label text="Open Onboarding screen" class="title" tap="onOnboardingTap" />
-    <Label text="Open App Review Card" class="title" tap="onAppReviewTap" />
-    <Label text="Release Notes" class="title" tap="onReleaseNotesTap" />
-    
-    <StackLayout orientation="horizontal">
-      <Label text="Is Super User" class="title" tap="onIsSuperUserTap" />
-      <Switch checked="{{ isSuperUserDebug }}" />
-    </StackLayout>
-    
-    
-    <Image src="https://d2kfjaekmjmy1l.cloudfront.net/images/icon-vrIMokVF5IKiFaCjR3AhYczmx.png" stretch ="fill" class="logo" />
-        <Label text="{{ status }}" textWrap="true" class="status" />
-        
-  </StackLayout>
+    <ScrollView>
+      <GridLayout rows="auto, auto, auto, auto">
+          <StackLayout row="0" class="lklogo" orientation="horizontal">
+            <Image src="https://d2kfjaekmjmy1l.cloudfront.net/images/icon-vrIMokVF5IKiFaCjR3AhYczmx.png" stretch ="fill" class="logo" />
+            <Label text="LaunchKit" textWrap="true" class="fancyblack" />         
+          </StackLayout>
+          <StackLayout row="1" class="card">
+              <Image src="https://d2kfjaekmjmy1l.cloudfront.net/images/onboarding/icon-vtOfu4-Nx1Ixb_7CWjXjOA_SE.png" class="img" stretch ="fill" />
+              <Label text="Onboard Window" textWrap="false" class="title" />
+              <Label text="Try" class="button" tap="onOnboardingTap" />
+          </StackLayout>        
+          <StackLayout row="2" class="card">
+            <Image src="https://d2kfjaekmjmy1l.cloudfront.net/images/reviews/icon-vxCQKhsLfwMrklTMEGl6eK3mW.png" class="img" stretch ="fill" />
+            <Label text="App Reviews" textWrap="false" class="title" />
+            <Label text="Try" class="button" tap="onAppReviewTap" />
+          </StackLayout>
+          <StackLayout row="3" class="card">
+              <Image src="https://d2kfjaekmjmy1l.cloudfront.net/images/release-notes/icon-vm3BCslheb7wdrn0-QeUMq9F6.png" class="img" stretch ="fill" />
+              <Label text="Release Notes" textWrap="false" class="title" />
+              <Label text="Try" class="button" tap="onReleaseNotesTap" />      
+          </StackLayout>
+        </GridLayout>
+    </ScrollView>
 </Page>
