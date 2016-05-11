@@ -9,7 +9,6 @@ exports.onNavigatingTo = function (args) {
     page.bindingContext = createViewModel();
 }
 
-//TODO: Partially Working
 exports.onOnboardingTap = function (args) {
     launchkit.showOnboarding().then(function (args) {
        viewModel.status = JSON.stringify(args);

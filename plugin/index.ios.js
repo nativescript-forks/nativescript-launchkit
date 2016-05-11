@@ -109,10 +109,6 @@ exports.showReleaseNotes = function (options) {
             
             var controller = options.page.ios;
             instance.presentAppReleaseNotesIfNeededFromViewControllerCompletion(controller, function (didPresent) {
-                if(didPresent == 3){
-                    reject("AppReleaseNotes presentation failed due to error: Error Domain=LKUIError Code=404 UserInfo=UI with that name does not exist in your LaunchKit account}")
-                }
-                
                 //Completion
                 resolve(
                     {

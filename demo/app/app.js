@@ -18,7 +18,8 @@ if (application.ios) {
         
         appDelegate.prototype.applicationDidFinishLaunchingWithOptions = function (app, launchOptions) {
             launchkit.initalize({
-                token: "OjMwhQZ5WgFFNZAQVBOYtWtAcXv1Kw2inxkzPEx_j6sK"
+                token: "OjMwhQZ5WgFFNZAQVBOYtWtAcXv1Kw2inxkzPEx_j6sK",
+                debug: true
             });
             
             
