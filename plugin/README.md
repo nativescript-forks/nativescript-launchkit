@@ -1,4 +1,6 @@
-# Nativescript LaunchKitSDK
+# Nativescript LaunchKitSDK Wrapper
+
+#[Setup LaunchKit Account](https://launchkit.io)#
 
 [Live Demo](https://appetize.io/embed/cdakjetad96u126kdaaw89q4nw?device=iphone6s&scale=75&orientation=portrait&osVersion=9.3)
 
@@ -82,3 +84,5 @@ launchkit.showAppReviewCard({
     page: page, //UIViewController from your pages nav
 });
 ```
+
+### Note: Unofficial plugin just wrapping the official iOS SDK
