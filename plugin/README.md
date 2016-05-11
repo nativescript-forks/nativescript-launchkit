@@ -73,7 +73,7 @@ launchkit.showOnboarding();
 [showReleaseNotes](https://launchkit.io/sdk/release-notes/): Returns Promise (args: didPresent) 
 ``` js
 launchkit.showAppReviewCard({
-    page: page, //UIViewController from your pages nav
+    page: page //args.object from your onNavigatingTo, or onPageLoaded events
 });
 ```
 
@@ -81,7 +81,7 @@ launchkit.showAppReviewCard({
 [showAppReviewCard](https://launchkit.io/sdk/rating-prompt/): Returns Promise (args: didPresent, flowResult)
 ``` js
 launchkit.showAppReviewCard({
-    page: page, //UIViewController from your pages nav
+    page: page //args.object from your onNavigatingTo, or onPageLoaded events
 });
 ```
 
