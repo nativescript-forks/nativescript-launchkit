@@ -1,5 +1,9 @@
 # Nativescript LaunchKitSDK
 
+[Live Demo](https://appetize.io/embed/cdakjetad96u126kdaaw89q4nw?device=iphone6s&scale=75&orientation=portrait&osVersion=9.3)
+
+![Preview](sample.gif)
+
 ## Setup
 
 Add this in your app.js

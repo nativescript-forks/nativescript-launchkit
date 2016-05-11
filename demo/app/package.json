@@ -1,7 +1,7 @@
 {
 	"name": "LaunchkitSDKDemo",
 	"main": "app.js",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"author": {
 		"name": "Steve McNiven-Scott",
 		"email": "steve@sitefinitysteve.com",

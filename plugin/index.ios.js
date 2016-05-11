@@ -104,7 +104,7 @@ exports.showReleaseNotes = function (options) {
         
         if(instance){
             if(settings.debug){
-                instance.debugAlwaysPresentAppReleaseNotes = options.debug;
+                instance.debugAlwaysPresentAppReleaseNotes = settings.debug;
             }
             
             var controller = options.page.ios;
