@@ -7,7 +7,7 @@
           </StackLayout>
           <StackLayout row="1" class="card">
               <Image src="https://d2kfjaekmjmy1l.cloudfront.net/images/onboarding/icon-vtOfu4-Nx1Ixb_7CWjXjOA_SE.png" class="img" stretch ="fill" />
-              <Label text="Onboard Window" textWrap="false" class="title" />
+              <Label text="Onboarding" textWrap="false" class="title" />
               <Label text="Try" class="button" tap="onOnboardingTap" />
           </StackLayout>        
           <StackLayout row="2" class="card">

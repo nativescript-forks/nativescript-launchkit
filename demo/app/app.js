@@ -20,6 +20,8 @@ if (application.ios) {
             launchkit.initalize({
                 token: "OjMwhQZ5WgFFNZAQVBOYtWtAcXv1Kw2inxkzPEx_j6sK"
             });
+            
+            
         };
         
         appDelegate.ObjCProtocols = [UIApplicationDelegate];
@@ -27,6 +29,5 @@ if (application.ios) {
     })(UIResponder);
     application.ios.delegate = appDelegate;
 }
-
 
 application.start({ moduleName: "main-page" });

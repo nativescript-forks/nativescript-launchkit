@@ -42,15 +42,19 @@ exports.setUser = function (user) {
 
 exports.showOnboarding = function () {
     return new Promise(function(resolve, reject) {
+
         var instance = LaunchKit.sharedInstance();
         
         if(instance){
-            var myWindow = new UIWindow();
-            myWindow.makeKeyAndVisible();
+            var appWindow = UIApplication.sharedApplication().keyWindow;
+                    
+            if(appWindow === null){
+                appWindow = new UIWindow();
+                appWindow.makeKeyAndVisible();
+            }
             
-            instance.presentOnboardingUIOnWindowCompletionHandler(myWindow, function(args){
+            instance.presentOnboardingUIOnWindowCompletionHandler(appWindow, function(args){
                 resolve({
-                    window: myWindow,
                     args: args    
                 });
             });
