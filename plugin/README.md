@@ -20,7 +20,6 @@ if (application.ios) {
         
         appDelegate.prototype.applicationDidFinishLaunchingWithOptions = function (app, launchOptions) {
             launchkit.initalize({
-                //Where this is your token from https://launchkit.io/sdk/install/
                 token: "OjMwhQZ5WgFFNZAQVBOYtWtAcXv1Kw2inxkzPEx_j6sK" 
             });
         };
@@ -37,7 +36,14 @@ if (application.ios) {
 var launchkit = require("nativescript-launchkit");
 ```
 
-[isSuperUser](https://launchkit.io/sdk/super-users/)
+``` js
+launchkit.initalize({
+    token: "",  //From https://launchkit.io/sdk/install/,
+    debug: false //tells all methods that have debug flags to use them
+});
+```
+
+[isSuperUser](https://launchkit.io/sdk/super-users/): Returns bool
 ``` js
 launchkit.isSuperUser();
 ```
@@ -51,15 +57,24 @@ launchkit.setUser({
 });
 ```
 
-[showOnboarding](https://launchkit.io/sdk/onboarding/): Returns Promise
+[showOnboarding](https://launchkit.io/sdk/onboarding/): Returns Promise (args: args)
 ``` js
 launchkit.showOnboarding();
 ```
+> Onboarding needs to be called from a view, will fail in app.js due to there being no UIWindow yet 
 
-[showAppReviewCard](https://launchkit.io/sdk/rating-prompt/): Returns Promise
+
+[showReleaseNotes](https://launchkit.io/sdk/release-notes/): Returns Promise (args: didPresent) 
 ``` js
 launchkit.showAppReviewCard({
     page: page, //UIViewController from your pages nav
-    debug: true //When true always shows the card
+});
+```
+
+
+[showAppReviewCard](https://launchkit.io/sdk/rating-prompt/): Returns Promise (args: didPresent, flowResult)
+``` js
+launchkit.showAppReviewCard({
+    page: page, //UIViewController from your pages nav
 });
 ```

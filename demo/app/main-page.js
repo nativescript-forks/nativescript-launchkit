@@ -21,24 +21,23 @@ exports.onOnboardingTap = function (args) {
 //TODO: Not working
 exports.onAppReviewTap = function (args) {
     launchkit.showAppReviewCard({
-        page: page,
-        debug: true
+        page: page
     }).then(function (args) {
-       viewModel.status = JSON.stringify(args); 
+       //Do something 
     }, function (error) {
-        viewModel.status = JSON.stringify(error);
+        
+        alert(error);
     });
 }
 
 //DONE
 exports.onReleaseNotesTap = function (args) {
     launchkit.showReleaseNotes({
-        page: page,
-        debug: true
+        page: page
     }).then(function (args) {
-       viewModel.status = JSON.stringify(args);
+       //Do something
     }, function (error) {
-        viewModel.status = JSON.stringify(error);
+        alert(error);
     });
 }
 

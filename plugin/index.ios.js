@@ -2,6 +2,7 @@ var application = require("application");
 var frameModule = require("ui/frame");
 
 var settings = {
+    debug: false,
     token: "",
     user: {
         id: "",
@@ -14,9 +15,11 @@ var settings = {
 exports.initalize = function (options) {
     settings.token = options.token;
     
-    if(options.user){
+    if(options.debug)
+        settings.debug = options.debug;
+    
+    if(options.user)
         settings.user = options.user;
-    }
     
     LaunchKit.launchWithToken(options.token);
 }
@@ -27,8 +30,8 @@ exports.instance = function () {
 
 exports.isSuperUser = function (options) {
     if(options){
-        if(options.debug)
-            LaunchKit.sharedInstance().debugAppUserIsAlwaysSuper = options.debug;
+        if(settings.debug)
+            LaunchKit.sharedInstance().debugAppUserIsAlwaysSuper = settings.debug;
     }
         
     return LKAppUserIsSuper();
@@ -47,17 +50,15 @@ exports.showOnboarding = function () {
         
         if(instance){
             var appWindow = UIApplication.sharedApplication().keyWindow;
-                    
-            if(appWindow === null){
-                appWindow = new UIWindow();
-                appWindow.makeKeyAndVisible();
-            }
-            
+            if(appWindow){
             instance.presentOnboardingUIOnWindowCompletionHandler(appWindow, function(args){
                 resolve({
                     args: args    
                 });
             });
+            }else{
+                console.log("No active UI window in UIApplication.sharedApplication().keyWindow")
+            }
         }else{
             console.log("Please call initalize first");
             reject("Please call initalize first");
@@ -70,16 +71,18 @@ exports.showAppReviewCard = function (options) {
         var instance = LaunchKit.sharedInstance();
         
         if(instance){
-            if(options){
-                if(options.debug){
-                    //This is documented but not live yet?
-                    instance.debugAlwaysShowAppRatingPrompt = options.debug;
-                }
+            if(settings.debug){
+                //This is documented but not live yet?
+                instance.debugAlwaysShowAppRatingPrompt = settings.debug;
             }
             
             var controller = options.page.ios;
             instance.presentAppReviewCardIfNeededFromViewControllerCompletion(controller, function (didPresent, flowResult) {
                 //Completion
+                if(didPresent == 3){
+                    reject("AppReviewCard presentation failed due to error: Error Domain=LKUIError Code=404 UserInfo=UI with that name does not exist in your LaunchKit account}")
+                }
+                
                 resolve(
                     {
                         didPresent: didPresent,
@@ -100,14 +103,16 @@ exports.showReleaseNotes = function (options) {
         var instance = LaunchKit.sharedInstance();
         
         if(instance){
-            if(options){
-                if(options.debug){
-                    instance.debugAlwaysPresentAppReleaseNotes = options.debug;
-                }
+            if(settings.debug){
+                instance.debugAlwaysPresentAppReleaseNotes = options.debug;
             }
             
             var controller = options.page.ios;
             instance.presentAppReleaseNotesIfNeededFromViewControllerCompletion(controller, function (didPresent) {
+                if(didPresent == 3){
+                    reject("AppReleaseNotes presentation failed due to error: Error Domain=LKUIError Code=404 UserInfo=UI with that name does not exist in your LaunchKit account}")
+                }
+                
                 //Completion
                 resolve(
                     {
