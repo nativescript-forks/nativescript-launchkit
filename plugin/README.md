@@ -2,7 +2,7 @@
 
 [Live Demo](https://appetize.io/embed/cdakjetad96u126kdaaw89q4nw?device=iphone6s&scale=75&orientation=portrait&osVersion=9.3)
 
-![Preview](sample.gif)
+![Preview](https://github.com/sitefinitysteve/nativescript-launchkit/raw/master/sample.gif)
 
 ## Setup
 
